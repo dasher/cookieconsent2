@@ -153,7 +153,7 @@
     var insertReplacements = function (htmlStr, scope) {
       return htmlStr.replace(/\{\{(.*?)\}\}/g, function (_match, sub) {
         var tokens = sub.split('||');
-        var value;
+        var value, token;
         while (token = tokens.shift()) {
           token = token.trim();
 
@@ -234,7 +234,7 @@
       container: null, // selector
       theme: 'light-floating',
       domain: null, // default to current domain.
-      path: '/', 
+      path: '/',
       expiryDays: 365,
       markup: [
         '<div class="cc_banner-wrapper {{containerClasses}}">',
